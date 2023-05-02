@@ -1,0 +1,17 @@
+select option:first-child {
+  display: none;
+}
+.food {
+  color:  #85C1E9!important;
+}
+
+.clothing {
+  color: #76D7C4;
+}
+
+.electronics {
+  color:#D2B4DE;
+}
+td{
+  font-size: x-large;
+}

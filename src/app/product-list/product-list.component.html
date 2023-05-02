@@ -1,0 +1,67 @@
+<!-- <div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 my-3">
+        <div class="form-group mt-4" style="margin-top: 2.5rem!important;">
+          <input class="form-control" style="font-size: xx-large;" placeholder="Filter by category" [(ngModel)]="searchTerm" (keyup)="filterList()">
+        </div>
+      </div>
+
+    </div>
+<BR>
+<div class="container">
+  <table class="table table-hover">
+    <tbody>
+      <tr>
+        <div class="row">
+          <div class="col-4" style="font-size: x-large;"><b>Product</b></div>
+          <div class="col-4" style="font-size: x-large;"><b>Price</b></div>
+          <div class="col-4" style="font-size: x-large;"><b>Category</b></div>
+        </div>
+      </tr>
+
+        <tr class="table-light row" *ngFor="let product of filteredProducts">
+          <div class="col-4"><td>{{product.content}}</td></div>
+          <div class="col-4"><td>{{product.prix}}</td></div>
+          <div class="col-4"><td [ngClass]="product.categorie">{{product.categorie}}</td></div>
+        </tr>
+
+
+    </tbody>
+  </table>
+</div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-3">
+      <div class="form-group mt-4" style="margin-top: 2.5rem!important;">
+        <input class="form-control" style="font-size: xx-large;" placeholder="Filter by criteria" [(ngModel)]="searchTerm">
+      </div>
+    </div>
+  </div>
+  <table class="table table-hover mt-5">
+    <tbody>
+      <tr>
+        <div class="row">
+          <div class="col-4" style="font-size: x-large;"><b>Product</b></div>
+          <div class="col-4" style="font-size: x-large;"><b>Price</b></div>
+          <div class="col-4" style="font-size: x-large;"><b>Category</b></div>
+        </div>
+      </tr>
+
+        <tr class="table-light row" [ngClass]="product.categorie" *ngFor="let product of filteredProducts" style="font-size:x-large">
+          <ng-container *ngIf="product.categorie.toLowerCase().includes(searchTerm.toLowerCase()) || product.content.toLowerCase().includes(searchTerm.toLowerCase())">
+            <div class="col-4">{{product.content}}</div>
+            <div class="col-4">{{product.prix}}</div>
+            <div class="col-4" >{{product.categorie}}</div>
+          </ng-container>
+        </tr>
+
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
